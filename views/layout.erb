@@ -38,8 +38,13 @@
 			      <li><a href="/something">Something</a></li>
 			      <li><a href="/contacts">Contacts</a></li>
 			    </ul>
-			    <ul class="nav nav-pills navbar-right navbar-nav" role="tablist">
-					  <li role="presentation"><a href="#">Cart <span class="badge">3</span></a></li>
+			    <ul class="nav navbar-nav navbar-right">
+					  <li>
+					  	<form action="/cart" method="post">
+					  		<input name="orders" type="text">
+					  		<input type="submit" class="btn btn-primary" value="Cart">
+					  	</form>
+					  </li>
 					</ul>
 			  </div><!--/.nav-collapse -->
 			</nav>
