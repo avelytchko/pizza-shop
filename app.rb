@@ -10,6 +10,10 @@ class Product < ActiveRecord::Base
 
 end
 
+after do
+  ActiveRecord::Base.clear_active_connections!
+end
+
 get '/' do
   @products = Product.all
   erb :index
