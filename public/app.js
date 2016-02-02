@@ -58,3 +58,10 @@ function cart_get_orders()
 	}
 	return orders;
 }
+
+function clear_cart_orders()
+{
+	window.localStorage.clear()
+	update_orders_input();
+	update_orders_button();
+}
