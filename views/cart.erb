@@ -1,5 +1,5 @@
 <h2>Your cart</h2>
-
+<div id ="cart">
 <table class="table table-bordered table-striped"> 
   <thead> 
     <tr> 
@@ -47,5 +47,6 @@
     <label>Address:</label>
     <textarea name="order[address]" type="text" class="form-control" placeholder="Delivery address"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Place this order</button>
+  <button type="submit" class="btn btn-primary">Place this order</button> <button class="btn btn-danger" onlick="return cancel_order(); return false;">Cancel order</button>
 </form>
+</div>
