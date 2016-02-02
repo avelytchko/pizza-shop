@@ -32,7 +32,7 @@
 <button id="clear_cart" type="submit" class="btn btn-info btn-sm" onClick="clear_cart_orders()">Clear Cart</button>
 <p></p>
 <form action="/place_order" method="POST" role="form" class="well col-md-6">
-  <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>">
+  <input name="order[cost]" type="hidden" value="<%= total_price %>">
   <div class="form-group">
     <label>Name:</label>
     <input name="order[name]" type="text" class="form-control" placeholder="Your name">

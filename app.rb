@@ -7,7 +7,12 @@ require 'sinatra/activerecord'
 set :database, 'sqlite3:pizzashop.db'
 
 class Product < ActiveRecord::Base
+end
 
+class Order < ActiveRecord::Base
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :address, presence: true
 end
 
 after do
@@ -45,7 +50,20 @@ def parse_orders_input orders_input
     arr2 = [id, cnt]
     arr.push arr2
   end
-
   return arr
+end
 
+post '/place_order' do
+  @o = Order.new params[:order]
+  if @o.save
+    erb "<h2>Your order complete!</h2>"
+  else
+    @error = @o.errors.full_messages.first
+    erb "Ошибка"
+  end
+end
+
+get '/something' do
+  @orders = Order.all
+  erb :orders
 end
